@@ -1,4 +1,4 @@
-package com.zbcinterestinganimal;
+package com.interestinganimal;
 
 import org.junit.Test;
 

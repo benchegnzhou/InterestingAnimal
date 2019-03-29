@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.zbcinterestinganimal"
+        applicationId "com.zbc.interestinganimal"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
 
@@ -23,6 +23,7 @@ android {
 }
 
 dependencies {
+    implementation project(':commonutils')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'

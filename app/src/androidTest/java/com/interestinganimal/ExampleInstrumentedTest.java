@@ -1,4 +1,4 @@
-package com.zbcinterestinganimal;
+package com.interestinganimal;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
