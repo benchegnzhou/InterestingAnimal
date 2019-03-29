@@ -1,0 +1,64 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//在根项目中移入全局管理配置文件
+apply from: file("commonConfig.gradle")
+
+
+buildscript {
+    //配置我们工程的仓库地址
+    repositories {
+        google()
+        //jcenter是一个声明仓库的源，之前版本则是mavenCentral(),
+        // jcenter可以理解成是一个新的中央远程仓库，兼容maven中心仓库，而且性能更优。
+        jcenter()
+        //jcenter()和mavenCentral()是Android Studio中Gradle插件使用的仓库
+        mavenCentral()
+
+        //私有maven地址配置(一般是公司搭建的存储库)
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        /*maven {
+            url 'https://esri.bintray.com/arcgis'
+            name "alias name"
+            //如果需要验证需要添加验证信息
+            credentials {
+                username = 'joe'
+                password = 'secret'
+            }
+        }*/
+
+    }
+    //配置我们工程的 '插件'依赖地址,
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.1'
+
+
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        //远程maven仓库中心
+        mavenCentral()
+        /*maven {
+            url 'https://esri.bintray.com/arcgis'
+            name "alias name"
+        }*/
+
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
